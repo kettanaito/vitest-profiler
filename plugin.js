@@ -55,6 +55,19 @@ export function vitestProfiler() {
         return config
       }
 
+      // Skip this plugin if "vitest" is not a part of your Vite run.
+      if (
+        config.plugins?.some((plugin) => {
+          return (
+            plugin != null &&
+            typeof plugin === 'object' &&
+            plugin.name === 'vitest'
+          )
+        })
+      ) {
+        return config
+      }
+
       if (fs.existsSync(VITEST_PROFILER_DIRECTORY)) {
         await fs.promises.rmdir(VITEST_PROFILER_DIRECTORY, {
           recursive: true,
