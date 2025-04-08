@@ -15,7 +15,7 @@ I've created this plugin to implement Vitest recommendations of test profiling w
 First, add this package as a dependency to your project:
 
 ```sh
-npm i vitest-profiler-plugin --save-dev
+npm i vitest-profiler --save-dev
 ```
 
 ### 2. Add plugin
