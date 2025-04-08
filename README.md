@@ -6,7 +6,7 @@ A Vite plugin to profile Vitest test runs.
 
 Vitest has fantastic documentation on [Profiling Test Performance](https://vitest.dev/guide/profiling-test-performance.html). When it comes to profiling said performance in practice, it involves a series of configuration and Node.js process modifications that felt too tedious for me to repeat every time. Besides, you likely want those profiling options to be conditional anyway, to apply only when you actually want to profile your test run.
 
-I've created this plugin to implement the Vitest recommendations of test profiling while simultaneously giving you a nice experience while doing so. I also intend to keep this plugin in-sync with the Vitest team recommendations in the future so for you it's a single point of entry for accessible test profiling.
+I've created this plugin to implement Vitest recommendations of test profiling while simultaneously giving you a nice experience while doing so. I also intend to keep this plugin in-sync with the Vitest team recommendations in the future so for you it's a single point of entry for accessible test profiling. Enjoy!
 
 ## Getting started
 
