@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "vitest-profiler",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A Vite plugin to profile Vitest test runs.",
   "main": "./index.js",
   "bin": {
