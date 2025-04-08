@@ -31,11 +31,11 @@ export default defineConfig({
 })
 ```
 
-> The plugin automatically configures your threads/forks with the correct `execArgv` to privision Node.js process profiling.
+> The plugin automatically configures your threads/forks with the correct `execArgv` to provision Node.js process profiling.
 
 ### 3. Run tests
 
-Finally, run your test command prepending `vitest-profiler` before it:
+Finally, run your test command adding `vitest-profiler` before it:
 
 ```sh
 vitest-profiler npm test
