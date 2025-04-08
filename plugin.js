@@ -1,10 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-export const VITEST_PROFILER_DIRECTORY = path.join(
-  process.cwd(),
-  'test-profiles',
-)
+export const VITEST_PROFILER_DIRECTORY = path.join('test-profiles')
 
 /**
  * @param {string} filename
@@ -57,21 +54,8 @@ export function vitestProfiler() {
         return config
       }
 
-      // Skip this plugin if "vitest" is not a part of your Vite run.
-      if (
-        config.plugins?.some((plugin) => {
-          return (
-            plugin != null &&
-            typeof plugin === 'object' &&
-            plugin.name === 'vitest'
-          )
-        })
-      ) {
-        return config
-      }
-
       if (fs.existsSync(VITEST_PROFILER_DIRECTORY)) {
-        await fs.promises.rmdir(VITEST_PROFILER_DIRECTORY, {
+        await fs.promises.rm(VITEST_PROFILER_DIRECTORY, {
           recursive: true,
           force: true,
         })
@@ -82,17 +66,17 @@ export function vitestProfiler() {
 
       const execArgv = [
         '--cpu-prof',
-        `--cpu-prof-dir=${PROFILES_DIRECTORY}`,
+        `--cpu-prof-dir=${VITEST_PROFILER_DIRECTORY}`,
         `--cpu-prof-name=${cpuProfileName}`,
         '--heap-prof',
-        `--heap-prof-dir=${PROFILES_DIRECTORY}`,
+        `--heap-prof-dir=${VITEST_PROFILER_DIRECTORY}`,
         `--heap-prof-name=${heapProfileName}`,
       ]
 
       generatedProfiles.push({
         name: 'tests',
-        cpuProfilePath: path.join(PROFILES_DIRECTORY, cpuProfileName),
-        heapProfilePath: path.join(PROFILES_DIRECTORY, heapProfileName),
+        cpuProfilePath: path.join(VITEST_PROFILER_DIRECTORY, cpuProfileName),
+        heapProfilePath: path.join(VITEST_PROFILER_DIRECTORY, heapProfileName),
       })
 
       const overrides =
@@ -122,9 +106,11 @@ export function vitestProfiler() {
       return config
     },
     buildEnd() {
+      console.log(
+        'Test profiling complete! Generated the following profiles:\n',
+      )
       generatedProfiles.forEach((profile) => {
-        console.log(`
-	${profile.name}:
+        console.log(`  ${profile.name}:
 ${[
   ['CPU', profile.cpuProfilePath],
   ['Heap', profile.heapProfilePath],
