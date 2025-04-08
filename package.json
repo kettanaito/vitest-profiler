@@ -8,7 +8,7 @@
     "vitest-profiler": "./cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "release publish"
   },
   "keywords": [
     "vitest",
@@ -22,6 +22,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/kettanaito/vitest-profiler"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@ossjs/release": "^0.8.1",
