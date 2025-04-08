@@ -11,6 +11,8 @@ execSync(`${argv.join(' ')}`, {
   stdio: 'inherit',
   env: {
     ...process.env,
+    // Set this flag so the plugin knows if it has to run or not.
+    VITEST_PROFILER_ENABLED: '1',
     NODE_OPTIONS: [
       ...(process.env.NODE_OPTIONS ? process.env.NODE_OPTIONS.split(' ') : []),
       '--cpu-prof',

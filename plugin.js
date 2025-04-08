@@ -50,6 +50,11 @@ export function vitestProfiler() {
     name: 'vitest-profiler-plugin',
     enforce: 'pre',
     async config(config) {
+      // Skip this plugin entirely if not run from under `vitest-profiler` CLI.
+      if (process.env.VITEST_PROFILER_ENABLED !== '1') {
+        return config
+      }
+
       if (fs.existsSync(VITEST_PROFILER_DIRECTORY)) {
         await fs.promises.rmdir(VITEST_PROFILER_DIRECTORY, {
           recursive: true,
