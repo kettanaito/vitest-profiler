@@ -1,0 +1,32 @@
+{
+  "type": "module",
+  "name": "vitest-profiler",
+  "version": "0.0.0",
+  "description": "A Vite plugin to profile Vitest test runs.",
+  "main": "./index.js",
+  "bin": {
+    "vitest-profiler": "./cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vitest",
+    "profile",
+    "performance",
+    "debug"
+  ],
+  "author": "Artem Zakharchenko <kettanaito@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/kettanaito/vitest-profiler",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kettanaito/vitest-profiler"
+  },
+  "devDependencies": {
+    "vite": "^6.2.5"
+  },
+  "peerDependencies": {
+    "vite": ">= 6.x.x"
+  }
+}
