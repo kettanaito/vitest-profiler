@@ -1,7 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-export const VITEST_PROFILER_DIRECTORY = './test-profiles'
+export const VITEST_PROFILER_DIRECTORY = path.join(
+  process.cwd(),
+  'test-profiles',
+)
 
 /**
  * @param {string} filename

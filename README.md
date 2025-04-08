@@ -31,7 +31,7 @@ export default defineConfig({
 })
 ```
 
-> The plugin automatically configures your threads/forks with the correct `execArgv` to privision Node.js process profiling.
+> The plugin automatically configures your threads/forks with the correct `execArgv` to privision Node.js process profiling. It does nothing unless you [run your tests](#3-run-tests) correctly.
 
 ### 3. Run tests
 
