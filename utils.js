@@ -1,4 +1,3 @@
-
 import path from 'node:path'
 
 export const VITEST_PROFILER_DIRECTORY = path.join(process.cwd(), 'test-profiles')
