@@ -41,6 +41,8 @@ Finally, run your test command prepending `vitest-profiler` before it:
 vitest-profiler npm test
 ```
 
+> The `vitest-profiler` CLI will automatically force your tests to be in the `run` mode (not `watch`).
+
 Alternatively, you can create a custom NPM script to use as a shorthand:
 
 ```json
