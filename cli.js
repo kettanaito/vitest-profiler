@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 import { execSync } from 'node:child_process'
-import {
-  VITEST_PROFILER_DIRECTORY,
-  mainThreadCpuProfileName,
-} from './plugin.js'
+import { VITEST_PROFILER_DIRECTORY, mainThreadCpuProfileName } from './utils.js'
 
 const argv = process.argv.slice(2)
 
