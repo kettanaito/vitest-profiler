@@ -24,6 +24,7 @@
     "url": "https://github.com/kettanaito/vitest-profiler"
   },
   "devDependencies": {
+    "@ossjs/release": "^0.8.1",
     "vite": "^6.2.5"
   },
   "peerDependencies": {
